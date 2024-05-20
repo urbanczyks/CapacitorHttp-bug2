@@ -1,0 +1,31 @@
+<ion-content>
+    <ion-img class="logo" src="assets/logo_small.svg"></ion-img>
+    <ion-spinner class="loader" name="circular" [hidden]="!isLoading"></ion-spinner>
+    <div [hidden]="isLoading">
+        <div class="value_container" [hidden]="noResult">
+            <div>
+                <div>
+                    <ion-label class="label" >Assigned driver</ion-label>
+                </div>
+                <div>
+                    <ion-label class="value">{{driver}}</ion-label>
+                </div>
+                <div class="separator"></div>
+            </div>
+            <div class="value_div">
+                <div>
+                    <ion-label class="label">Delivery postal code</ion-label>
+                </div>
+                <div>
+                    <ion-label class="value">{{postal_code}}</ion-label>
+                </div>
+                <div class="separator"></div>
+            </div>
+        </div>
+        <ion-img class="img" [hidden]="!noResult" src="assets/no_data_icon.svg"></ion-img>
+        <h1 class="error_text" [hidden]="!noResult">This label does not belong to a package to be sorted.</h1>
+    </div>
+    <div class="button_container">
+        <ion-button class="button_center" (click)="scanAgain()">make API call</ion-button>
+    </div>
+</ion-content>
