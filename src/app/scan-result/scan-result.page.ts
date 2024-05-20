@@ -23,7 +23,8 @@ export class ScanResultPage implements OnInit {
   constructor( private route: Router, private alertController: AlertController, private httpService: HttpService,) { }
 
   ngOnInit() {
-    this.getOrganisation()
+    //this.getOrganisation()
+    this.organisation = "app.tiramizoo.com"
     BarcodeScanner.isGoogleBarcodeScannerModuleAvailable().then((isAvailable) => {
       if(isAvailable) {
         BarcodeScanner.installGoogleBarcodeScannerModule().then((installed) => {
